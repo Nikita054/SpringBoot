@@ -1,4 +1,4 @@
-package ru.spring.boot.kotov.nikita.simplelibrary;
+package ru.spring.boot.kotov.nikita.simplelibrary.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,7 +49,7 @@ public class LibraryController {
 
         model.addAttribute("messages",messageRepo.findAll());
         model.addAttribute("text",textRepo.findAll());
-        return "index";
+        return "main";
     }
     @PostMapping("/filter")
     public String filter(@RequestParam String filter,Model model){

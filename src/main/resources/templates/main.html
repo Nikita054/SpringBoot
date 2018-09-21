@@ -5,7 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-my main
+<div>
+    <form method="post" th:action="@{/add}">
+        <input type="text" name="name" placeholder="Введите имя">
+        <input type="text" name="email" placeholder="Введите email">
+        <input type="text" name="text">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+<div>
+    <form method="post" th:action="@{/filter}">
+        <input type="text" name="filter">
+        <button type="submit">Применить</button>
+    </form>
+</div>
 <table>
     <tr>
         <th>id message</th>
@@ -20,5 +33,8 @@ my main
         <td th:text="${message.idText}"></td>
     </tr>
 </table>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>
