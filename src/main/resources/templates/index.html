@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>my index</p>
+<div>
+    <form method="post" th:action="@{/add}">
+        <input type="text" name="name" placeholder="Введите имя">
+        <input type="text" name="email" placeholder="Введите email">
+        <input type="text" name="text">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+<div>
+    <form method="post" th:action="@{/filter}">
+        <input type="text" name="filter">
+        <button type="submit">Применить</button>
+    </form>
+</div>
+<a href="/main">На Main</a>
+<div>Форма разлогирования </div>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
